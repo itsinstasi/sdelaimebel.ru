@@ -1,2 +1,2 @@
 ﻿User-agent: *
-Sitemap: http://sdelaimebelru.itsinsta.site/sitemap.xml
+Sitemap: https://sdelaimebelru.itsinsta.site/sitemap.xml
