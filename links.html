@@ -343,7 +343,8 @@
 
 
 
-						<div class="links-page-blc">
+						<div class="links-page-blc" style="
+">
 							<div class="links-page-blc__txt">
 								<p><b>Уважаемые коллеги!</b></p>
 							</div>
@@ -353,7 +354,8 @@
 
 
 
-						<div class="links-page-blc">
+						<div class="links-page-blc" style="
+">
 							<div class="links-page-blc__txt">
 								<p>Мы предлагаем вам разместить информацию о своих работах на нашем инстаграм аккаунте.<br/>Присылайте свои работы и описание в Директ инстаграм.<br/>Условие: Вы должны разместить в своём аккаунте эту же фотографию, но без описания. В тексте указать: ЧИТАЙТЕ ОБ ЭТОЙ РАБОТЕ В @sdelaimebel.ru</p>
 							</div>
@@ -472,6 +474,17 @@ $(document).ready(function(){
                 contentType: 'application/json',
 		data : form_data
 	}).done(function(response){
+	    var email = response.email;
+		if (email) {
+	        $("#leadSent").text("Ваш запрос отправлен на " + email);
+		} else {
+	        $("#leadSent").text("Ваш запрос отправлен");
+		}
+
+		var input = form.find('input');
+		input.attr('readonly', true);
+        input.attr("disabled", true);
+		form.find('button').attr("disabled", true);
 	}).fail(function(){
 	});
 
